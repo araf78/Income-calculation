@@ -37,20 +37,3 @@ function balance(){
     }
 };
 
-function saveCalc(){
-    const totalIncome = document.getElementById('total-income').value;
-    const saveMoneyInput = document.getElementById('save-money').value;
-    if(isNaN(saveMoneyInput)){
-        alert('??! Give a number !??')
-    }
-    else if(saveMoneyInput < 0 || saveMoneyInput > 100){
-        alert('??! Give a number more than 0 & less than 100.Okay !??')
-    }
-    else{
-    const savingAmount = parseInt((totalIncome * saveMoneyInput) / 100);
-    document.getElementById('saving-amount').innerText = savingAmount;
-
-    const newBalance = balance();
-    document.getElementById('remaining-balance').innerText = parseInt(newBalance - savingAmount);
-    }
-    };
